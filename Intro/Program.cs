@@ -57,3 +57,39 @@ for (int i = 0; i < courses2.Length; i++)
 {
     Console.WriteLine(courses2[i].Name + "/" + courses2[i].Price);
 }
+
+
+IndividualCustomer customer1 = new IndividualCustomer();
+customer1.Id = 1;
+customer1.NationalIdentity = "12345678922";
+customer1.FirstName = "Aslı";
+customer1.LastName = "Karayiğit";
+customer1.CustomerNumber = "123456";
+
+IndividualCustomer customer2 = new IndividualCustomer();
+customer2.Id = 2;
+customer2.NationalIdentity = "56458978215";
+customer2.FirstName = "Özgür";
+customer2.LastName = "Atılgan";
+customer2.CustomerNumber = "123457";
+
+CorporateCustomer customer3 = new CorporateCustomer();
+customer3.Id = 3;
+customer3.Name = "Kodlamaio";
+customer3.CustomerNumber = "654788";
+customer3.TaxNumber = "1234567890";
+
+CorporateCustomer customer4 = new CorporateCustomer();
+customer4.Id = 4;
+customer4.Name = "abc";
+customer4.CustomerNumber = "654789";
+customer4.TaxNumber = "1234567897";
+
+
+BaseCustomer[] customers = { customer1, customer2, customer3, customer4 };
+
+//polymorphism (referansları tutma durumu)
+foreach (BaseCustomer customer in customers)
+{
+    Console.WriteLine(customer.CustomerNumber);
+}
